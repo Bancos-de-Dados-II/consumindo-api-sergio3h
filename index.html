@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tasks"></i> Gerenciador de Tarefas</h1>
+        </header>
+
+        <main>
+            <section class="task-form">
+                <h2>Adicionar/Editar Tarefa</h2>
+                <form id="taskForm">
+                    <input type="hidden" id="taskId">
+                    <div class="form-group">
+                        <label for="taskTitle">Título:</label>
+                        <input type="text" id="taskTitle" placeholder="Título da tarefa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskDescription">Descrição:</label>
+                        <textarea id="taskDescription" placeholder="Descrição da tarefa"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskType">Tipo:</label>
+                        <select id="taskType" required>
+                            <option value="">Selecione um tipo</option>
+                            <option value="Pessoal">Pessoal</option>
+                            <option value="Profissional">Profissional</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="saveButton" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Salvar
+                        </button>
+                        <button type="button" id="cancelButton" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="task-list">
+                <h2>Minhas Tarefas</h2>
+                <div class="filter-controls">
+                    <select id="filterType">
+                        <option value="">Todos os tipos</option>
+                        <option value="Pessoal">Pessoal</option>
+                        <option value="Profissional">Profissional</option>
+                    </select>
+                    <button id="refreshButton" class="btn btn-secondary">
+                        <i class="fas fa-sync-alt"></i> Atualizar
+                    </button>
+                </div>
+                <div id="taskList" class="tasks-container">
+                    <!-- Tarefas serão carregadas aqui via JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
